@@ -1,0 +1,17 @@
+<h1>Google Books</h1>
+
+<input #title type="text"><button (click)="search(title.value); title.value=''">Search</button>
+
+<p *ngFor="let book of books">{{book}}</p>
+
+<br/><br/><br/>
+<hr/>
+
+<h1>Translate</h1>
+<input #idText type="text">
+ <h3>Select a Language</h3>
+<input #idLanguage type="text" placeholder="en">
+<button (click)="translate(idText.value, idLanguage.value); idText.value=''">Traducir</button>
+
+<p>Idioma entrante: <span style="color:blue;">{{objectReturn.languageIn}}.</span>   Texto entrante 	--> <span style="color:blue;">{{objectReturn.textIn}}</span></p>
+<p>Idioma saliente: <span style="color:red;">{{objectReturn.languageOut}}</span>.  Texto traducido	--> <span style="color:red;">{{objectReturn.textOut}}</span></p>
